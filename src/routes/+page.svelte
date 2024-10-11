@@ -12,7 +12,7 @@
 		}
 	});
 
-    let answer: null | string = null;
+    let answer: null | string = 'not-loaded-yet';
     async function clickHandler() {
         try {
             const {mathExpert} = await import('./math-expert');
