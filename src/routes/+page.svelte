@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { updated } from '$app/stores';
 	import { beforeNavigate } from '$app/navigation';
+	import { VERSION } from '$lib/version';
 
 
     beforeNavigate(({ willUnload, to }) => {
@@ -11,15 +12,15 @@
 		}
 	});
 
-    let answer: null | number = null;
+    let answer: null | string = null;
     async function clickHandler() {
         const {mathExpert} = await import('./math-expert');
-        answer = mathExpert() +1.5;
+        answer = mathExpert();
     }
 </script>
 
 <h1>Welcome to SvelteKit</h1>
-<p>Let's see if we can reproduce async load error.</p>
+<p>Let's see if we can reproduce async load error. v={VERSION}</p>
 
 
 <button on:click={clickHandler} type="button">

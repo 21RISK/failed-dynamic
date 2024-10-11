@@ -1,6 +1,6 @@
 import vercel from '@sveltejs/adapter-vercel';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-
+import { VERSION } from './src/lib/version.js';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -11,6 +11,7 @@ const config = {
 	kit: {
 		adapter: vercel(),
 		version: {
+			name: VERSION,
 			pollInterval: 30000
 		}
 	}
