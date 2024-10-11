@@ -14,7 +14,7 @@
     let answer: null | number = null;
     async function clickHandler() {
         const {mathExpert} = await import('./math-expert');
-        answer = mathExpert();
+        answer = mathExpert() +1;
     }
 </script>
 
