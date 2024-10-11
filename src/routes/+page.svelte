@@ -14,8 +14,12 @@
 
     let answer: null | string = null;
     async function clickHandler() {
-        const {mathExpert} = await import('./math-expert');
-        answer = mathExpert();
+        try {
+            const {mathExpert} = await import('./math-expert');
+            answer = mathExpert();
+        } catch (error) {
+            alert(`🔴 Failed to load module: ${error}`);
+        }
     }
 </script>
 
